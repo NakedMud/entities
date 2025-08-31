@@ -1,5 +1,7 @@
 # Entities Module v1.0.0
 Initial entity configuration system for NakedMud
+**Requires NakedMud 4.3.0 or higher** (includes modifications to `body.c` for dynamic list support).
+
 ### ADDED
 - Nested class architecture with `RaceConfig`, `BodyConfig`, `Race`, and `BodyPosition` classes
 - StorageSet-based entity configuration with clean separate storage files
