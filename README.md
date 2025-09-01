@@ -4,7 +4,7 @@ A comprehensive entity configuration system for NakedMud that provides centraliz
 
 This module breaks the dependence on hardcoded C lists by exposing new Python helpers to the C layer, allowing dynamic configuration of body position types and sizes that were previously static in `body.c`. The system provides clear separation between C logic and configuration data, enabling anyone to gradually migrate away from C-defined lists toward a fully Python-managed configuration system.
 
-**Requires NakedMud 4.2.1 or higher** (includes modifications to `body.c` for dynamic list support).
+**Requires NakedMud 4.3.0 or higher** (includes modifications to `body.c` for dynamic list support).
 
 ## Installation
 
