@@ -671,10 +671,10 @@ def race_positions_parser(sock, race, choice, arg):
         name = arg.strip()
         position = race.get_position(name)
         if position:
-            # Display available body position types for reference
-            body_config = get_body_config()
-            original_builtin_types = ["floating about head", "about body", "head", "face", "ear", "neck", "torso", "arm", "wing", "wrist", "left hand", "right hand", "finger", "waist", "leg", "left foot", "right foot", "hoof", "claw", "tail", "held"]
-            custom_types = body_config.body_types.bodypart_types
+            # Get all available types from C code
+            all_body_types = world.get_bodypos_types()
+            original_builtin_types = world.get_bodypos_types()
+            custom_types = all_body_types
             all_types = list(original_builtin_types) + [pos_type for pos_type in custom_types if pos_type not in original_builtin_types]
             
             # Create markers dict for built-in vs custom types

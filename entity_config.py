@@ -402,8 +402,8 @@ def create_default_body_config():
     mud.log_string("Created default body configuration with custom types and sizes.")
 
 # Configuration file paths
-RACE_CONFIG_FILE = "lib/misc/entities-race-config"
-BODY_CONFIG_FILE = "lib/misc/entities-body-config"
+RACE_CONFIG_FILE = "misc/entities-race-config"
+BODY_CONFIG_FILE = "misc/entities-body-config"
 
 def load_entity_configs():
     """Load entity configuration from separate storage files."""
@@ -443,6 +443,8 @@ def load_entity_configs():
     import world
     
     # Register custom body types and sizes FIRST before races
+    # Note: With the new string-based body system, custom types are automatically
+    # added when bodyAddPositionByName() is called, so we don't need to pre-register them
     added_positions = []
     for bodypart_type in body_config.body_types.bodypart_types:
         try:
